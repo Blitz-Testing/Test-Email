@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: Test-Email
+    package:
+        name: Test-Email
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Test-Email/tests
+            options:
+                outputdir: robot/Test-Email/results
+
+    robot_testdoc:
+        options:
+            path: robot/Test-Email/tests
+            output: robot/Test-Email/doc/Test-Email_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
